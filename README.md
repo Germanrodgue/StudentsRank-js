@@ -1,7 +1,5 @@
 
 
-nmp install // Install dependencies
+npm install // Install dependencies
 
-
-//TRANSPILATION
-./node_modules/gulp/bin/gulp.js
+gulp // Start gulp tasks
