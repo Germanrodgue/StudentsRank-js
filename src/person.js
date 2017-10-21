@@ -46,6 +46,7 @@ class Person {
     liEl.appendChild(getElementTd(this.points));
 
     var addPointsEl = document.createElement("button");
+    addPointsEl.setAttribute("class", "myButton");
     var tb = document.createTextNode("+20");
     addPointsEl.appendChild(tb);
 
@@ -64,6 +65,7 @@ class Person {
     this.calculatedPoints = 0;
     this.gradedTasks.forEach(function (gTaskItem) {
       let inputEl = document.createElement("input");
+      inputEl.setAttribute("class", "input-task");
       inputEl.type = "number";
       inputEl.min = 0;
       inputEl.max = 100;
