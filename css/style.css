@@ -1,15 +1,35 @@
+
 #llistat {
     width: 600px;
     margin: 0 auto;
 }
-h1 {
-    margin-left:20px;
+.top_menu {
+    margin-right:20px;
+    margin-bottom:10px;
+    background: black;
+    padding:5px;
+    border-radius: 7%;
 }
-#title {
-    width: 300px;
+
+#llistat{
+  color:white;
+}
+
+#main_container header {
+    width: 400px ; 
     margin: 0 auto;
 }
 
+body > h1 {
+  width: 200px;
+  margin: 0 auto;
+}
+
+fieldset > legend{
+  color: white;
+}
+
+/* Button */
 .myButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #54a3f7;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #54a3f7;
@@ -127,7 +147,7 @@ h1 {
     border-radius: 5px;
   }
 
- span {
+ label {
     color: white;
   }
   a:link, a:visited {

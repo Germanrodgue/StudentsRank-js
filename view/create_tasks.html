@@ -1,9 +1,13 @@
-
 <form class="form" method="GET">
-        <span>Task name:</span><br>
-        <input type="text" name="Tname" id="Tname"><br>
-        <span>Description:</span><br>
-        <input type="text" name="Description" id="TDescription"><br><br>
-
-        <input class="myButton" type="submit" value="Submit" id="submit">
+        <fieldset>
+                <legend>Create Task</legend>
+                <label for="Tname">
+                        Task Name:<br> <input type="text" id="Tname" name="Tname">
+                </label><br>
+                <label for="TDescription">
+                        Description:<br> <input type="text" id="TDescription" name="Description">
+                </label><br><br>
+                <input class="myButton" type="submit" value="Submit" id="submit">
+        </fieldset>
+        
 </form>

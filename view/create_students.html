@@ -1,11 +1,16 @@
 <form method="GET">
-   <span>Student name:</span><br>
-    <input type="text" name="Stname" id="Stname"><br>
-    <span>Student surname:</span><br>
-    <input type="text" name="Stsname" id="Stsname"><br>
-    <span>Points:</span><br>
-    <input type="text" name="Points" id="Points"><br><br>
-
-    <input class="myButton" type="submit" value="Submit" id="submit">
+        <fieldset>
+                <legend>Create Task</legend>
+                <label for="Stname">
+                        Student name:<br> <input type="text" id="Stname" name="Stname">
+                </label><br>
+                <label for="Stsname">
+                        Student surname:<br> <input type="text" id="Stsname" name="Stsname">
+                </label><br>
+                <label for="Points">
+                        Points:<br> <input type="text" id="Points" name="Points">
+                </label><br><br>
+                <input class="myButton" type="submit" value="Submit" id="submit">
+        </fieldset>
 </form>
 

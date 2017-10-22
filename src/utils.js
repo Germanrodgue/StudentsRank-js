@@ -1,5 +1,4 @@
 
-
 /** Hash code funtion usefull for getting an unique id based on a large text */
 function hashcode(str) {
   var hash = 0, i, chr;

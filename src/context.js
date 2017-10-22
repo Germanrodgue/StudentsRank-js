@@ -17,9 +17,7 @@ class Context {
 
     constructor() {
         this.students = [];
-
         this.gradedTasks = [];
-
         this.StudentsLocalStorage();
         this.TasksLocalStorage();
 
@@ -31,7 +29,6 @@ class Context {
         if ((StudentsCheck !== null) && (StudentsCheck !== "undefined")) {
             var Students = JSON.parse(localStorage.getItem('Students'));
             for (var i = 0; i < Students.length; i++) {
-
                 let newSt = new Person(Students[i].name, Students[i].surname, Number(Students[i].points), Students[i].gradedTasks);
                 this.students.push(newSt);
             }
@@ -41,9 +38,7 @@ class Context {
 
     //Load the Tasks from the local storage of the browser
     TasksLocalStorage() {
-
         var studentsEl = document.getElementById("llistat");
-
         var Tasks = JSON.parse(localStorage.getItem('Tasks'));
         if (Tasks !== null) {
 
@@ -70,6 +65,10 @@ class Context {
         addTask.addEventListener("click", () => {
             this.addGradedTasks();
         });
+        var contact = document.getElementById("contact");
+        contact.addEventListener("click", () => {
+            this.contact();
+        });
     }
 
     /** Draw Students rank table in descendent order using points as a criteria */
@@ -90,12 +89,16 @@ class Context {
 
             var GRADED_TASK = headerString;
             var repl = eval('`' + responseText + '`');
-            studentsEl.innerHTML += repl;
-            context.students.forEach(function (studentItem) {
-                let view = studentItem.getHTMLView();
-                
-                studentsEl.appendChild(view);
-            });
+            studentsEl.innerHTML += repl;   
+            if (context.students == ""){
+                studentsEl.innerHTML = "No students found";
+            } else {
+                context.students.forEach(function (studentItem) {
+                    let view = studentItem.getHTMLView();
+                    studentsEl.appendChild(view);
+                });
+            }
+            
         };
         loadHtml("view/list_students.html", list_students);
     }
@@ -146,6 +149,15 @@ class Context {
         loadHtml("view/create_tasks.html", create_task);
     }
 
+    contact() {
+        var contact = function (responseText) {
+            var submit = document.getElementById("submit");
+            submit.addEventListener("click", () => {
+                context.getRanking();
+            });
+        };
+        loadHtml("view/contact.html", contact);
+    }
 }
 
 
