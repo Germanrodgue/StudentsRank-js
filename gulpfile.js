@@ -1,22 +1,48 @@
-var fs = require("fs");
-var browserify = require("browserify");
+var fs = require('fs');
+var browserify = require('browserify');
 var gulp = require('gulp');
 var webserver = require('gulp-webserver');
-var notify = require('gulp-notify');
-var growl = require('gulp-notify-growl');
-var jscs = require('gulp-jscs');
-var jshint = require('gulp-jshint');
+var $ = require('gulp-load-plugins')({ lazy: true });
+var jsdoc = require('gulp-jsdoc3');
+//var jshint = require('gulp-jshint');
 
-if (!fs.existsSync("dist")){
-  fs.mkdirSync("dist");
+if (!fs.existsSync('dist')){
+  fs.mkdirSync('dist');
 }
+
+/**
+ * vet the code and create coverage report
+ * @return {Stream}
+ */
+gulp.task('vet', function() {
+  //log('Analyzing source with JSHint and JSCS');
+  return gulp
+    .src('./src/*')
+    //.pipe($.if(args.verbose, $.print()))
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish', { verbose: true }))
+    .pipe($.jshint.reporter('fail'))
+    .pipe($.jscs())
+    .pipe($.jscs.reporter());
+});
+
+/**
+ * $ gulp
+ * description: Generate automatically all development documentation using jsdoc
+ */
+
+gulp.task('doc', function (cb) {
+  var config = require('./jsdoc.json');
+  gulp.src(['README.md','./src/**/*.js'], {read: false})
+    .pipe(jsdoc(config, cb));
+});
 
 ///babelify, es6 to es5
 gulp.task('browserify', function() {
-browserify("./src/main.js")
-  .transform("babelify", {presets: ["es2015"]})
+  browserify('./src/main.js')
+  .transform('babelify', {presets: ['es2015']})
   .bundle()
-  .pipe(fs.createWriteStream("dist/main.js"));
+  .pipe(fs.createWriteStream('dist/main.js'));
 });
 
 ///http server live reload (html changes)
@@ -29,23 +55,8 @@ gulp.task('webserver', function() {
   }));
 });
 
-gulp.task('jscs', function() {
-    gulp.src('./src/**/*.js')
-        .pipe(jscs())
-        .pipe(notify({
-            title: 'JSCS',
-            message: 'JSCS Passed. Let it fly!'
-        }))
-});
-gulp.task('jshint', function() {
-  return gulp.src('./src/**/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'));
-});
 // watch any change
 gulp.task('watch', ['browserify'], function () {
-    gulp.watch('./src/**/*.js', ['browserify']);
-    gulp.watch('./src/**/*.js', ['jscs']);
-	gulp.watch('./src/**/*.js', ['jshint']);
+  gulp.watch('./src/**/*.js', ['browserify']);
 });
-gulp.task('default', ['browserify', 'webserver', 'watch', 'jscs', 'jshint']);
+gulp.task('default', ['browserify', 'webserver', 'watch']);
