@@ -1,4 +1,6 @@
 /** Hash code funtion usefull for getting an unique id based on a large text */
+let cache_templates = new Map();
+
 function hashcode(str) {
   let hash = 0, i, chr;
   if (str.length === 0) {
@@ -31,7 +33,9 @@ function deleteContent() {
   }
 }
 
+/** Function used to load templates with a xhttp request */
 function loadTemplate(urlTemplate,callback) {
+
   let xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState === 4 && this.status === 200) {
@@ -44,15 +48,18 @@ function loadTemplate(urlTemplate,callback) {
   xhttp.send();
 }
 
+/** Pop up window, used to add attitude tasks */
 function popupwindow(url, title, w, h) {
+  
   let left = (screen.width / 2) - (w / 2);
   let top = (screen.height / 2) - (h / 2);
+ 
   return window.open(url, title, 'toolbar=no, location=no, directories=no,' +
                     'status=no, menubar=no,scrollbars=no, resizable=no, copyhistory=no,' +
                     ' width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
 }
 
-
+/** used to format the date of a task */
 function formatDate(date) {
   var monthNames = [
     'January', 'February', 'March',
