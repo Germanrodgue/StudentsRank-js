@@ -136,6 +136,9 @@ function getGradedTasks(req, res, next) {
 }*/
 
 router.post('/upload', function (req, res) {
+ if (!fs.existsSync('src/server/img')){
+    fs.mkdirSync('src/server/img');
+  }
   var dataString = req.body[1].split(' ').join('+');
   var name = req.body[0];
   let base64Image = dataString.split(';base64,').pop();
