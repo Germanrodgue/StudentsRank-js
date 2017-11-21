@@ -1,15 +1,29 @@
-<h3>Add new Graded Task</h3>
-We understand as a graded task any test or practice that will be marked by teacher and should be reflected in the final mark.
+<div class="gtasks">
+  <h3>Add new Graded Task</h3>
+  We understand as a graded task any test or practice that will be marked by teacher and should be reflected in the final mark.
+  <br>
+  <br>
+  <form id="newGradedTask">
+    <div class="form-group">
+      <label for="name">Task name:</label>
+      <input type="text" class="form-control" id="idTaskName" name="taskname" value="" required>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="description">Task description:</label>
+      <br>
+      <textarea rows="4" cols="50" class="form-control" id="idTaskDescription" name="taskdescription" value=""></textarea>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="weight">Task Weight (${PERCENT_TASKS} %):</label>
+      <input type="number" class="form-control" min="1" max="${PERCENT_TASKS}" id="idTaskWeight" name="taskweight" value="" required>
+    </div>
+    <br>
+    <input type="submit" class="btn btn-primary" value="Save">
+  </form>
 
-<form id="newGradedTask">
-  Task name:<br>
-  <input type="text" id="idTaskName" name="taskname" value="">
-  <br>
-  Task description:<br>
-  <textarea rows="4" cols="50" id="idTaskDescription" name="taskdescription" value=""></textarea>
-  <br>
-  Task Weight (0-100 %):<br>
-  <input type="number" id="idTaskWeight" name="taskweight" value="">
-  <br><br>
-  <input type="submit" value="Save">
-</form> 
+  <table id="listStudentsGrade">
+
+  </table>
+</div>

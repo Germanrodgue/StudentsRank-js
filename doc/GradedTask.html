@@ -33,14 +33,14 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="AttitudeTask.html">AttitudeTask</a></li><li><a href="GradedTask.html">GradedTask</a></li><li><a href="Person.html">Person</a></li><li><a href="Task.html">Task</a></li>
+					<li><a href="AttitudeTask.html">AttitudeTask</a></li><li><a href="GradedTask.html">GradedTask</a></li><li><a href="Person.html">Person</a></li><li><a href="STUDENT_MARKS.html">STUDENT_MARKS</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="global.html#_totalPoints">_totalPoints</a></li><li><a href="global.html#cache_templates">cache_templates</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#getElementTd">getElementTd</a></li><li><a href="global.html#loadTemplate">loadTemplate</a></li><li><a href="global.html#popupwindow">popupwindow</a></li>
+					<li><a href="global.html#_totalXPPoints">_totalXPPoints</a></li><li><a href="global.html#findParent">findParent</a></li><li><a href="global.html#hashcode">hashcode</a></li><li><a href="global.html#showXP">showXP</a></li>
 				</ul>
 			</li>
 			
@@ -81,9 +81,7 @@
         GradedTask
         </h2>
         
-            <div class="class-description"><p>GradedTask class. Create a graded task in order to be evaluated 
-for every student engaged. Theory tests and procedure practices 
-are part of this category.</p></div>
+            <div class="class-description"><p>To acomplish private property</p></div>
         
     
 </header>
@@ -95,7 +93,7 @@ are part of this category.</p></div>
         
 <hr>
 <dt>
-    <h4 class="name" id="GradedTask"><span class="type-signature"></span>new GradedTask(name)</h4>
+    <h4 class="name" id="GradedTask"><span class="type-signature"></span>new GradedTask()</h4>
     
     
 </dt>
@@ -108,56 +106,6 @@ are part of this category.</p></div>
     
 
     
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>name</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>task name</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
     
 
     
@@ -192,13 +140,6 @@ are part of this category.</p></div>
 
 	
 
-	
-	<dt class="tag-tutorial method-doc-label method-doc-details-label">Tutorials:</dt>
-	<dd class="tag-tutorial">
-		<ul>
-			<li><em class="disabled">Tutorial: pointing-criteria</em></li>
-			</ul>
-	</dd>
 	
 
 	
@@ -237,6 +178,400 @@ are part of this category.</p></div>
 
     
 
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id=".getStudentGradedTasksPoints"><span class="type-signature">&lt;static> </span>getStudentGradedTasksPoints()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Calculate total graded points associated to one student</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".getStudentMarks"><span class="type-signature">&lt;static> </span>getStudentMarks()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Static method to get list marks associated with one student</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="addStudentMark"><span class="type-signature"></span>addStudentMark()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Add student mark using his/her person ID</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getHTMLEdit"><span class="type-signature"></span>getHTMLEdit()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Update a GradedTask, weight control in the form, you cannot add more total weight than 100%</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getStudentMark"><span class="type-signature"></span>getStudentMark()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Get student mark by their person ID</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        </dl>
     
 
     
@@ -286,7 +621,7 @@ are part of this category.</p></div>
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on November 6th 2017, 1:43:40 am
+		on November 21st 2017, 1:39:45 am
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

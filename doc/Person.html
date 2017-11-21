@@ -33,14 +33,14 @@
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="AttitudeTask.html">AttitudeTask</a></li><li><a href="GradedTask.html">GradedTask</a></li><li><a href="Person.html">Person</a></li><li><a href="Task.html">Task</a></li>
+					<li><a href="AttitudeTask.html">AttitudeTask</a></li><li><a href="GradedTask.html">GradedTask</a></li><li><a href="Person.html">Person</a></li><li><a href="STUDENT_MARKS.html">STUDENT_MARKS</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="global.html#_totalPoints">_totalPoints</a></li><li><a href="global.html#cache_templates">cache_templates</a></li><li><a href="global.html#formatDate">formatDate</a></li><li><a href="global.html#getElementTd">getElementTd</a></li><li><a href="global.html#loadTemplate">loadTemplate</a></li><li><a href="global.html#popupwindow">popupwindow</a></li>
+					<li><a href="global.html#_totalXPPoints">_totalXPPoints</a></li><li><a href="global.html#findParent">findParent</a></li><li><a href="global.html#hashcode">hashcode</a></li><li><a href="global.html#showXP">showXP</a></li>
 				</ul>
 			</li>
 			
@@ -263,7 +263,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="addGradedTask"><span class="type-signature"></span>addGradedTask()</h4>
+    <h4 class="name" id="getHTMLDetail"><span class="type-signature"></span>getHTMLDetail()</h4>
     
     
 </dt>
@@ -271,7 +271,7 @@
 
     
     <div class="description">
-        <p>Add a gradded task linked to person with its own mark.</p>
+        <p>Renders person detail view</p>
     </div>
     
 
@@ -341,7 +341,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="getHTMLView"><span class="type-signature"></span>getHTMLView()</h4>
+    <h4 class="name" id="getHTMLEdit"><span class="type-signature"></span>getHTMLEdit()</h4>
     
     
 </dt>
@@ -349,9 +349,7 @@
 
     
     <div class="description">
-        <p>Renders HTML person view Create a table row (tr) with
- all name, attitudePoints , and one input for 
-every gradded task binded for that person. We use a routing system to bind the buttons action</p>
+        <p>Renders person edit form, you can edit the avatar from this form, just the same as the addPerson Form</p>
     </div>
     
 
@@ -421,7 +419,7 @@ every gradded task binded for that person. We use a routing system to bind the b
             
 <hr>
 <dt>
-    <h4 class="name" id="getTotalPoints"><span class="type-signature"></span>getTotalPoints()</h4>
+    <h4 class="name" id="getId"><span class="type-signature"></span>getId()</h4>
     
     
 </dt>
@@ -429,7 +427,7 @@ every gradded task binded for that person. We use a routing system to bind the b
 
     
     <div class="description">
-        <p>Read person _totalPoints. A private property only modificable inside person instance</p>
+        <p>Get person id  based on a 10 character hash composed by name+surname</p>
     </div>
     
 
@@ -499,7 +497,7 @@ every gradded task binded for that person. We use a routing system to bind the b
             
 <hr>
 <dt>
-    <h4 class="name" id="privateAddTotalPoints"><span class="type-signature"></span>privateAddTotalPoints()</h4>
+    <h4 class="name" id="getStudentMarks"><span class="type-signature"></span>getStudentMarks()</h4>
     
     
 </dt>
@@ -507,7 +505,163 @@ every gradded task binded for that person. We use a routing system to bind the b
 
     
     <div class="description">
-        <p>Add points to persons we should carefully use it.</p>
+        <p>Get students Marks sliced by showNumGradedTasks from context</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="getTotalXPPoints"><span class="type-signature"></span>getTotalXPPoints()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Read person _totalXPPoints. A private property only modicable inside person instance</p>
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="privateAddXPPoints"><span class="type-signature"></span>privateAddXPPoints()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        <p>Add points to person. we should use it carefully .</p>
     </div>
     
 
@@ -623,7 +777,7 @@ every gradded task binded for that person. We use a routing system to bind the b
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a>
 	
-		on November 6th 2017, 1:43:40 am
+		on November 21st 2017, 1:39:45 am
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

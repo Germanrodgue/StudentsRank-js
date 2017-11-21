@@ -1,8 +1,60 @@
-
 <table>
-<thead>
-<tr><td colspan='3'></td>${GRADED_TASKS}</tr>
-</thead>
-<tbody id="idTableRankingBody"></tbody>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Total Points</th>
+            <th>Actions</th>
+            <th>XP Points</th>
+            <th>GT Points</th>
+            <th>${TPL_GRADED_TASKS}</th>
+        </tr>
+    </thead>
+    <tbody id="idTableRankingBody">
+        <!-- FILLED WITH REPEATED lineStudent template, once for student -->
+
+        <tr ng-repeat="person in TPL_PERSONS">
+
+            <td class="tdCenter">
+                <img src="src/server/img/${person[1].id}.jpg" width="50" height="64" alt="Student">
+                <a class="nameText" href='#student/${person[1].getId()}'>${person[1].surname}, ${person[1].name}</a>
+            </td>
+            <td>
+                <strong>${person[1].getTotalPoints()}</strong>
+            </td>
+
+            <td>
+                <a href='#editStudent/${person[1].getId()}'>
+                    <button class='btnS btn-edit'>
+                        <img src="../css/img/edit.png" width="15" height="15" />
+                    </button>
+                </a>
+                <a href='#deleteStudent/${person[1].getId()}'>
+                    <button class='btnS btn-delete'>
+                        <img src="../css/img/delete.png" width="15" height="15" />
+                    </button>
+                </a>
+            </td>
+
+            <td>
+                <strong>${person[1].getTotalXPPoints()}</strong>
+            </td>
+            <td>
+                <strong>${person[1].getGTtotalPoints()}</strong>
+            </td>
+
+            <td>
+                <a href='#addXP/${person[1].getId()}'>
+                    <button class="btnS btn btn-primary">+XP</button>
+                </a>
+            </td>
+
+            <td ng-repeat='GT in person[1].getStudentMarks()'>
+                <input type='number' class='gradedTaskInput' idStudent='${person[1].getId()}' idGradedTask='${GT[0]}' min=0 max=100 value='${GT[1]}'
+                />
+            </td>
+
+        </tr>
+
+    </tbody>
 
 </table>
