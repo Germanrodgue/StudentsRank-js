@@ -1,0 +1,22 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+npm-debug*
+*~
+# Project generated folders #
+#############################
+doc/
+dist/
+lib/
+src/server/data/333342/
+src/server/data/343242/
+src/server/data/fotos/
+!huevon.jpg
+node_modules/
+

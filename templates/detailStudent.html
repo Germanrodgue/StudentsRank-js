@@ -1,5 +1,5 @@
-<div>
-<h1>${TPL_STUDENT.name} ${TPL_STUDENT.surname} ${TPL_STUDENT.getTotalPoints()}</h1>
+<img src="src/server/data/fotos/${TPL_STUDENT.getId()}.jpg"/>
+<h1>${TPL_STUDENT.name} ${TPL_STUDENT.surname} ${TPL_STUDENT.getFinalGrade()}</h1>
 <h3>Attitude tasks</h3>
 
 <ul class="list-group">
@@ -10,4 +10,4 @@
 <ul class="list-group">
  ${TPL_GRADED_TASKS}
  </ul>
-</div>
+   

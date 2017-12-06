@@ -9,6 +9,7 @@ var fs = require('fs');
 
 module.exports = {
   saveGradedTasks: saveGradedTasks,
+  saveAttitudeTasks: saveAttitudeTasks,
   saveStudents: saveStudents
 };
 
@@ -45,7 +46,15 @@ function saveGradedTasks(gradedTasksJSON) {
     console.log('The file has been saved!');
   });
 }
-
+function saveAttitudeTasks(ATJSON) {
+  console.log('LLLLL ->' + JSON.stringify(ATJSON));
+  fs.writeFile('src/server/data/attitudetasks.json', ATJSON, 'utf8', (err) => {
+    if (err) {
+      throw err;
+    }
+    console.log('The file has been saved!');
+  });
+}
 /*function  getGradedTasks() {
   fs.readFile('src/server/data/gradedtasks.json', 'utf8', function readFileCallback(err, data) {
     if (err) {
